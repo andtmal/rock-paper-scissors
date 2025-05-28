@@ -8,10 +8,22 @@
 <body>
   <script>
     let computerChoice;
-    let computerNumber = Math.floor(Math.random() * 3);
+    let computerNumber;
     
-    let humanChoice = prompt("rock, paper, or scissors?");
+    let humanChoice;
     let humanNumber;
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    let rounds = prompt("Best of (how many rounds)?");
+
+    function playRound() {
+
+    let computerNumber = Math.floor(Math.random() * 3);
+    let humanChoice = prompt("rock, paper, or scissors?");
+
+    humanChoice = humanChoice.toLowerCase();
 
     switch(humanChoice) {
       case "rock": 
@@ -44,14 +56,35 @@
         return "It's a tie.";
       }
       else if ((humanNumber + 2) % 3 === computerNumber) {
-        return "you win!"
+        humanScore++;
+        return "you win!";
       }
       else {
+        computerScore++;
         return "You lose.";
       }
     }
 
-    console.log("You chooses ", humanChoice,". Computer chooses ", computerChoice,". ",getResult());
+    console.log("You choose ", humanChoice,". Computer chooses ", computerChoice,". ",getResult());
+    }
+
+    function playGame() {
+      for (let i = 0; i < rounds; i++) {
+        playRound();
+      }
+    }
+
+    playGame();
+
+    if(humanScore === computerScore) {
+      console.log("You: ",humanScore,". Computer: ",computerScore,". It's a tie.");
+    }
+    else if(humanScore > computerScore) {
+      console.log("You: ",humanScore,". Computer: ",computerScore,". You win!");
+    }
+    else {
+      console.log("You: ",humanScore,". Computer: ",computerScore,". You lose.")
+    }
 
   </script>
 </body>
