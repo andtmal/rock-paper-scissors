@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+  <script>
+    let computerChoice;
+    let computerNumber = Math.floor(Math.random() * 3);
+    
+    let humanChoice = prompt("rock, paper, or scissors?");
+    let humanNumber;
+
+    switch(humanChoice) {
+      case "rock": 
+        humanNumber = 0;
+        break;
+
+      case "paper":
+        humanNumber = 1;
+        break;
+
+      case "scissors": 
+        humanNumber = 2;
+    }
+
+    switch(computerNumber) {
+      case 0:
+        computerChoice = "rock";
+        break;
+
+      case 1:
+        computerChoice = "paper";
+        break;
+      
+      case 2:
+        computerChoice = "scissors";
+    }
+
+    function getResult() {
+      if (humanNumber === computerNumber) {
+        return "It's a tie.";
+      }
+      else if ((humanNumber + 2) % 3 === computerNumber) {
+        return "you win!"
+      }
+      else {
+        return "You lose.";
+      }
+    }
+
+    console.log("You chooses ", humanChoice,". Computer chooses ", computerChoice,". ",getResult());
+
+  </script>
+</body>
+</html>
