@@ -65,7 +65,7 @@
       }
     }
 
-    console.log("You choose ", humanChoice,". Computer chooses ", computerChoice,". ",getResult());
+    console.log(`You choose ${humanChoice}. Computer chooses ${computerChoice}. ${getResult()}`)
     }
 
     function playGame() {
@@ -77,13 +77,13 @@
     playGame();
 
     if(humanScore === computerScore) {
-      console.log("You: ",humanScore,". Computer: ",computerScore,". It's a tie.");
+      console.log(`You: ${humanScore}. Computer: ${computerScore}. It's a tie.`);
     }
     else if(humanScore > computerScore) {
-      console.log("You: ",humanScore,". Computer: ",computerScore,". You win!");
+      console.log(`You: ${humanScore}. Computer: ${computerScore}. You win!`);
     }
     else {
-      console.log("You: ",humanScore,". Computer: ",computerScore,". You lose.")
+      console.log(`You: ${humanScore}. Computer: ${computerScore}. You lose.`)
     }
 
   </script>
