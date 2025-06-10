@@ -6,86 +6,19 @@
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-  <script>
-    let computerChoice;
-    let computerNumber;
+
+  <div id="game">
+    <p>Best out of three. Choose your weapon:</p>
+    <button id="rock">rock</button>
+    <button id="paper">paper</button>
+    <button id="scissors">scissors</button>
+  </div>
+
+  <div id="score">
+    <p>Score:</p>
     
-    let humanChoice;
-    let humanNumber;
+  </div>
 
-    let humanScore = 0;
-    let computerScore = 0;
-
-    let rounds = prompt("Best of (how many rounds)?");
-
-    function playRound() {
-
-    let computerNumber = Math.floor(Math.random() * 3);
-    let humanChoice = prompt("rock, paper, or scissors?");
-
-    humanChoice = humanChoice.toLowerCase();
-
-    switch(humanChoice) {
-      case "rock": 
-        humanNumber = 0;
-        break;
-
-      case "paper":
-        humanNumber = 1;
-        break;
-
-      case "scissors": 
-        humanNumber = 2;
-    }
-
-    switch(computerNumber) {
-      case 0:
-        computerChoice = "rock";
-        break;
-
-      case 1:
-        computerChoice = "paper";
-        break;
-      
-      case 2:
-        computerChoice = "scissors";
-    }
-
-    function getResult() {
-      if (humanNumber === computerNumber) {
-        return "It's a tie.";
-      }
-      else if ((humanNumber + 2) % 3 === computerNumber) {
-        humanScore++;
-        return "you win!";
-      }
-      else {
-        computerScore++;
-        return "You lose.";
-      }
-    }
-
-    console.log(`You choose ${humanChoice}. Computer chooses ${computerChoice}. ${getResult()}`)
-    }
-
-    function playGame() {
-      for (let i = 0; i < rounds; i++) {
-        playRound();
-      }
-    }
-
-    playGame();
-
-    if(humanScore === computerScore) {
-      console.log(`You: ${humanScore}. Computer: ${computerScore}. It's a tie.`);
-    }
-    else if(humanScore > computerScore) {
-      console.log(`You: ${humanScore}. Computer: ${computerScore}. You win!`);
-    }
-    else {
-      console.log(`You: ${humanScore}. Computer: ${computerScore}. You lose.`)
-    }
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
